@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10sp"
+    android:orientation="horizontal"
+    android:padding="8dp"
+    android:background="?android:attr/selectableItemBackground">
+
+    <com.example.user.goeat_3.RoundImageView
+        android:id="@+id/store_img"
+        android:layout_width="100sp"
+        android:layout_height="80sp"
+        android:layout_marginVertical="25sp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/menu_food"
+        app:type="round"
+        tools:ignore="MissingPrefix" />
+
+    <LinearLayout
+        android:layout_width="211dp"
+        android:layout_height="95dp"
+        android:layout_gravity="center"
+        android:layout_marginLeft="10sp"
+        android:layout_weight="2"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/store_name"
+            android:layout_width="182dp"
+            android:layout_height="wrap_content"
+            android:text="繼光香香雞(府中店)"
+            android:textColor="@color/colorAccent" />
+
+        <TextView
+            android:id="@+id/store_type"
+            android:layout_width="185dp"
+            android:layout_height="wrap_content"
+            android:text="類別: 炸物" />
+
+        <TextView
+            android:id="@+id/store_phone"
+            android:layout_width="183dp"
+            android:layout_height="wrap_content"
+            android:text="電話: (02)2766-1234" />
+
+        <TextView
+            android:id="@+id/store_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="地址: 新北市板橋區府中路5號"
+            android:textSize="12dp"/>
+
+        <TextView
+            android:id="@+id/store_open"
+            android:layout_width="183dp"
+            android:layout_height="wrap_content"
+            android:text="營業時間: 14:00~22:00" />
+
+
+    </LinearLayout>
+
+
+    <ImageView
+        android:layout_width="18dp"
+        android:layout_height="120dp"
+        android:src="@drawable/star_five" />
+
+        <Button
+            android:id="@+id/btn_initiateAnOrder"
+            android:layout_width="20sp"
+            android:layout_height="match_parent"
+            android:layout_marginVertical="30sp"
+            android:text="發起訂單"
+            android:textColor="@color/white"
+            android:background="@drawable/button_small"
+            android:ems="1" />
+
+</LinearLayout>

@@ -1,0 +1,53 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="AppTheme.ToolBarStyle" >
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textColorPrimary">@color/white</item>
+        <item name="android:textColorSecondary">@color/white</item>
+        <item name="actionMenuTextColor">@color/white</item>
+        <item name="android:background">@color/colorPrimaryDark</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="BarTheme">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Theme.SearchView_Store" parent="Base.Widget.AppCompat.SearchView">
+        <item name="searchIcon">@drawable/ic_search_black_24dp</item>
+        <item name="closeIcon">@drawable/ic_cancel_red_24dp</item>
+        <item name="queryHint">搜尋店家</item>
+        <!--<item name="queryBackground">@drawable/background</item>-->
+    </style>
+
+
+    <!--文字內文定義-->
+    <style name="textSize_c">
+        <item name="android:textSize">16sp</item>
+    </style>
+    <!--文字標題定義-->
+    <style name="textSize_h" parent="textSize_c">
+        <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <!--RoundImageView定義-->
+    <declare-styleable name="RoundImageView">
+        <attr name="type" format="enum">
+            <enum name="circle" value="1"/>
+            <enum name="round" value="2"/>
+        </attr>
+        <attr name="radius" format="dimension"/>
+    </declare-styleable>
+
+</resources>

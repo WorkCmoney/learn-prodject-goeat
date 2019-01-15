@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#c30d23</color>
+    <color name="colorPrimaryDark">#c30d23</color>
+    <color name="colorAccent">#c30d23</color>
+    <color name="colorIcon">#ff0b0b</color>
+    <color name="menu_text_checked_color">#c30d23</color>
+    <color name="menu_text_uncheck_color">#898989</color>
+    <color name="menu_icon_checked_color">#ff0b0b</color>
+    <color name="menu_icon_uncheck_color">#898989</color>
+    <color name="white">#ffffff</color>
+    <color name="main_bg">#eaaab1</color>
+    <color name="bg_search">#f2ccd0</color>
+    <color name="button">#f7f8f8</color>
+</resources>

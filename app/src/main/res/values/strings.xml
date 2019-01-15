@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">GoEat_3</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_store">店家</string>
+    <string name="title_order">訂單</string>
+    <string name="title_history">紀錄</string>
+    <string name="toolbar_store">店家資訊</string>
+    <string name="toolbar_order">訂單資訊</string>
+    <string name="toolbar_history">訂單紀錄</string>
+    <string name="toolbar_addStore">新增店家</string>
+</resources>
