@@ -17,7 +17,7 @@
         android:padding="8sp"
         android:textColor="@color/colorAccent"
         android:textSize="20sp"
-        android:drawableLeft="@drawable/ic_add_store"
+        android:drawableLeft="@drawable/ic_add_store2"
         android:drawablePadding="8sp"
         android:background="?android:attr/selectableItemBackground"/>
 

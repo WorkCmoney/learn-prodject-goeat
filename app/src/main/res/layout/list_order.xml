@@ -1,13 +1,238 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:padding="8sp"
+    android:layout_margin="15sp"
+    app:cardCornerRadius="16sp"
+    app:cardMaxElevation="6sp">
 
   <TextView
       android:id="@+id/item"
       android:layout_width="match_parent"
       android:layout_height="100sp" />
 
-</LinearLayout>
+  <!--<ImageView-->
+  <!--android:id="@+id/btn_close"-->
+  <!--android:layout_width="50sp"-->
+  <!--android:layout_height="50sp"-->
+  <!--android:src="@drawable/sub_cancle"-->
+  <!--android:layout_gravity="top|right"-->
+  <!--android:background="?android:attr/selectableItemBackground"/>-->
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:orientation="vertical"
+      android:layout_marginHorizontal="20sp">
+
+    <TextView
+        android:id="@+id/txt_orderTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="GOEat團隊 下午茶"
+        android:textSize="24sp"
+        android:gravity="center"
+        android:textColor="@color/colorAccent"
+        android:layout_marginTop="10sp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_weight="2"
+        android:layout_marginTop="10sp">
+
+      <TextView
+          android:layout_width="80sp"
+          android:layout_height="match_parent"
+          android:text="店家"
+          android:gravity="center|left"
+          android:textColor="@color/colorAccent" />
+
+        <TextView
+          android:id="@+id/txt_storeName"
+          android:layout_width="0dp"
+          android:layout_height="match_parent"
+          android:layout_weight="2"
+          android:text="繼光香香雞"
+          android:gravity="center|left"
+          android:layout_marginLeft="10sp" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1sp"
+        android:background="@color/main_bg"
+        android:layout_marginTop="10sp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:orientation="horizontal"
+        android:layout_marginTop="10sp">
+
+      <TextView
+          android:layout_width="80sp"
+          android:layout_height="match_parent"
+
+          android:text="發起人"
+          android:gravity="center|left"
+          android:textColor="@color/colorAccent" />
+
+        <com.example.user.goeat_3.RoundImageView
+            android:id="@+id/img_username"
+            android:layout_width="52dp"
+            android:layout_height="52dp"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            android:src="@drawable/person"
+            app:type="circle"
+            tools:ignore="MissingPrefix" />
+
+      <TextView
+          android:id="@+id/txt_username"
+          android:layout_width="0dp"
+          android:layout_height="match_parent"
+          android:layout_weight="2"
+          android:text="Cheng"
+          android:textSize="16sp"
+          android:gravity="center|left"
+          android:layout_marginLeft="10sp"/>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1sp"
+        android:background="@color/main_bg"
+        android:layout_marginTop="10sp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:orientation="horizontal"
+        android:layout_marginTop="10sp">
+
+      <TextView
+          android:id="@+id/txt_order_end_time"
+          android:layout_width="80sp"
+          android:layout_height="match_parent"
+          android:text="結單時間"
+          android:gravity="center|left"
+          android:textColor="@color/colorAccent" />
+
+      <!--<TextView-->
+          <!--android:id="@+id/txt_end_date"-->
+          <!--android:layout_width="wrap_content"-->
+          <!--android:layout_height="match_parent"-->
+          <!--android:text="2019年1月9日"-->
+          <!--android:gravity="center|left"-->
+          <!--android:layout_marginLeft="10sp"/>-->
+
+      <TextView
+          android:id="@+id/txt_end_tim"
+          android:layout_width="wrap_content"
+          android:layout_height="match_parent"
+          android:text="2019年1月9日 12:00"
+          android:gravity="center|left"
+          android:layout_marginLeft="10sp"/>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1sp"
+        android:background="@color/main_bg"
+        android:layout_marginTop="10sp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:orientation="horizontal"
+        android:layout_marginTop="10sp">
+
+      <TextView
+          android:layout_width="80sp"
+          android:layout_height="match_parent"
+          android:text="取餐時間"
+          android:gravity="center|left"
+          android:textColor="@color/colorAccent" />
+
+      <!--<TextView-->
+          <!--android:id="@+id/txt_delivery_date"-->
+          <!--android:layout_width="wrap_content"-->
+          <!--android:layout_height="match_parent"-->
+          <!--android:text="2019年1月9日"-->
+          <!--android:gravity="center|left"-->
+          <!--android:layout_marginLeft="10sp"/>-->
+
+      <TextView
+          android:id="@+id/txt_delivery_time"
+          android:layout_width="wrap_content"
+          android:layout_height="match_parent"
+          android:text="2019年1月9日 15:00"
+          android:gravity="center|left"
+          android:layout_marginLeft="10sp"/>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1sp"
+        android:background="@color/main_bg"
+        android:layout_marginTop="10sp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="3"
+        android:orientation="horizontal"
+        android:layout_marginTop="10sp">
+
+      <TextView
+          android:layout_width="80sp"
+          android:layout_height="match_parent"
+          android:text="備註"
+          android:gravity="center|left"
+          android:textColor="@color/colorAccent" />
+
+      <TextView
+          android:id="@+id/txt_note"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="大家辛苦了,選個好吃的蛋糕跟飲料,一起吃個下午茶放鬆一下吧!(請自備零錢喔)"
+          android:gravity="center|left|top"
+          android:layout_marginLeft="10sp"
+          android:ellipsize="end"
+          android:maxLines="10"/>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1sp"
+        android:background="@color/main_bg"
+        android:layout_marginTop="10sp"/>
+
+    <Button
+        android:id="@+id/btn_sendOrder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="我要點餐"
+        android:layout_marginVertical="10sp"
+        android:background="@drawable/button"
+        android:textColor="@color/white"/>
+
+  </LinearLayout>
+
+</android.support.v7.widget.CardView>

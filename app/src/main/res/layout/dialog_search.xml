@@ -1,0 +1,86 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:textColor="@color/colorAccent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/main_bg"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="35sp"
+            android:layout_marginHorizontal="30sp"
+            android:layout_marginVertical="8sp"
+            android:background="@drawable/bg_search">
+
+            <ImageView
+                android:id="@+id/iv_search_search"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10sp"
+                android:layout_gravity="center_vertical"
+                app:srcCompat="@drawable/ic_search_black_24dp" />
+
+            <EditText
+                android:id="@+id/et_search_keyword"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@null"
+                android:imeOptions="actionSearch"
+                android:padding="4sp"
+                android:layout_gravity="center"
+                android:singleLine="true"
+                android:textColorHint="@color/text_grey"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:id="@+id/iv_search_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/ic_cancel_red_24dp"
+                android:paddingRight="10sp"
+                android:layout_gravity="center_vertical"/>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/divider" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_search_history"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <View
+            android:id="@+id/search_underline"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/divider" />
+
+        <TextView
+            android:id="@+id/tv_search_clean"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?android:attr/selectableItemBackground"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="清空搜索紀錄"
+            android:textColor="@color/colorAccent"/>
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view_search_outside"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</LinearLayout>

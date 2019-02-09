@@ -6,27 +6,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:background="@color/main_bg">
 
-    <TextView
-        android:id="@+id/title"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="16sp"
-        android:text="第一步、填寫店家資訊"
-        android:textColor="@color/colorAccent"
-        android:gravity="center"
-        android:padding="10sp"
-        android:background="@color/bg_search" />
-
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="10sp"
-        android:layout_below="@id/title"
-        android:layout_above="@id/line1"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         app:cardCornerRadius="20sp"
         app:cardMaxElevation="6sp"
         style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -36,9 +27,9 @@
 
             <com.example.user.goeat_3.RoundImageView
                 android:id="@+id/store_img"
-                android:layout_width="150sp"
-                android:layout_height="100sp"
-                android:layout_marginVertical="25sp"
+                android:layout_width="200sp"
+                android:layout_height="150sp"
+                android:layout_marginBottom="20sp"
                 android:adjustViewBounds="true"
                 android:scaleType="centerCrop"
                 android:src="@drawable/menu_food"
@@ -48,15 +39,16 @@
                 android:visibility="gone"/>
 
             <ImageView
+                android:id="@+id/Img_store"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/add_store_photo"
                 android:layout_gravity="center"
-                android:visibility="visible"/>
+                android:src="@drawable/add_store_photo"
+                android:visibility="visible" />
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:orientation="horizontal"
                 android:layout_marginTop="20sp">
@@ -72,13 +64,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="請輸入店名"
-                    android:textSize="14sp"/>
+                    android:textSize="14sp"
+                    android:maxLength="10"/>
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:orientation="horizontal">
 
@@ -86,19 +79,22 @@
                     android:layout_width="60sp"
                     android:layout_height="wrap_content"
                     android:text="電話 :"
-                    android:textColor="@color/colorAccent" />
+                    android:textColor="@color/colorAccent"
+                    android:maxLength="10"/>
 
                 <EditText
+                    android:id="@+id/edi_storePhone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="請輸入電話"
+                    android:inputType="phone"
                     android:textSize="14sp"/>
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:orientation="horizontal"
                 android:layout_marginTop="10sp">
@@ -107,9 +103,11 @@
                     android:layout_width="60sp"
                     android:layout_height="wrap_content"
                     android:text="地址 :"
-                    android:textColor="@color/colorAccent" />
+                    android:textColor="@color/colorAccent"
+                    android:maxLength="15"/>
 
                 <EditText
+                    android:id="@+id/edi_storeAddress"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="請輸入地址"
@@ -119,10 +117,11 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:orientation="horizontal"
-                android:layout_marginTop="10sp">
+                android:layout_marginTop="10sp"
+                android:paddingVertical="8sp">
 
                 <TextView
                     android:layout_width="80sp"
@@ -130,39 +129,48 @@
                     android:text="開始營業 :"
                     android:textColor="@color/colorAccent" />
 
-                <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:ems="2"
-                    android:textSize="14sp"/>
-
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:id="@+id/start_time"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="時"
-                    android:layout_marginLeft="4sp"/>
+                    android:text="請選擇時間"/>
 
-                <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:ems="2"
-                    android:layout_marginLeft="4sp"
-                    android:textSize="14sp"/>
+                <!--<EditText-->
+                    <!--android:id="@+id/start_hour"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:ems="2"-->
+                    <!--android:textSize="14sp" />-->
 
-                <TextView
-                    android:layout_width="80sp"
-                    android:layout_height="wrap_content"
-                    android:text="分"
-                    android:layout_marginLeft="4sp"/>
+                <!--<TextView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="時"-->
+                    <!--android:layout_marginLeft="4sp"/>-->
+
+                <!--<EditText-->
+                    <!--android:id="@+id/start_min"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_marginLeft="4sp"-->
+                    <!--android:ems="2"-->
+                    <!--android:textSize="14sp" />-->
+
+                <!--<TextView-->
+                    <!--android:layout_width="80sp"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="分"-->
+                    <!--android:layout_marginLeft="4sp"/>-->
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:orientation="horizontal"
-                android:layout_marginTop="10sp">
+                android:layout_marginTop="10sp"
+                android:paddingVertical="8sp">
 
                 <TextView
                     android:layout_width="80sp"
@@ -170,36 +178,44 @@
                     android:text="結束營業 :"
                     android:textColor="@color/colorAccent" />
 
-                <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:ems="2"
-                    android:textSize="14sp"/>
-
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:id="@+id/end_time"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="時"
-                    android:layout_marginLeft="4sp"/>
+                    android:text="請選擇時間"/>
 
-                <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:ems="2"
-                    android:layout_marginLeft="4sp"
-                    android:textSize="14sp"/>
+                <!--<EditText-->
+                    <!--android:id="@+id/end_hour"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:ems="2"-->
+                    <!--android:textSize="14sp" />-->
 
-                <TextView
-                    android:layout_width="80sp"
-                    android:layout_height="wrap_content"
-                    android:text="分"
-                    android:layout_marginLeft="4sp"/>
+                <!--<TextView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="時"-->
+                    <!--android:layout_marginLeft="4sp"/>-->
+
+                <!--<EditText-->
+                    <!--android:id="@+id/end_min"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_marginLeft="4sp"-->
+                    <!--android:ems="2"-->
+                    <!--android:textSize="14sp" />-->
+
+                <!--<TextView-->
+                    <!--android:layout_width="80sp"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="分"-->
+                    <!--android:layout_marginLeft="4sp"/>-->
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:orientation="horizontal"
                 android:layout_marginTop="10sp">
@@ -210,45 +226,18 @@
                     android:text="分類 :"
                     android:textColor="@color/colorAccent" />
 
-                <EditText
+                <Spinner
+                    android:id="@+id/spinner_store_class"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="請選擇分類"
-                    android:textSize="14sp"/>
+                    android:entries="@array/storeClass"
+                    android:textAlignment="center"
+                    android:background="@color/bg_search"/>
 
             </LinearLayout>
 
         </LinearLayout>
-
+    </ScrollView>
     </android.support.v7.widget.CardView>
-
-    <LinearLayout
-        android:id="@+id/line1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:background="@color/button"
-        android:orientation="horizontal"
-        android:paddingVertical="10sp">
-
-        <TextView
-            android:id="@+id/btn_return"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:text="返回"
-            android:background="?android:attr/selectableItemBackground"/>
-
-        <TextView
-            android:id="@+id/btn_next"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:text="下一步"
-            android:background="?android:attr/selectableItemBackground"/>
-
-    </LinearLayout>
 
 </RelativeLayout>

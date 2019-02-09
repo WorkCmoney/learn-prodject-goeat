@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">GoEat_3</string>
+    <string name="app_name">GoEat</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="title_store">店家</string>
     <string name="title_order">訂單</string>
@@ -8,4 +8,22 @@
     <string name="toolbar_order">訂單資訊</string>
     <string name="toolbar_history">訂單紀錄</string>
     <string name="toolbar_addStore">新增店家</string>
+    <string name="toolbar_storeInfo">店家資訊</string>
+    <string name="toolbar_oderInfo">點餐</string>
+    <string name="toolbar_orderContal">訂單管理</string>
+
+    <string-array name="storeClass">
+        <item>中式</item>
+        <item>日式</item>
+        <item>西式</item>
+        <item>泰式</item>
+        <item>韓式</item>
+        <item>複合式</item>
+        <item>炸物</item>
+        <item>點心</item>
+        <item>飲料</item>
+    </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

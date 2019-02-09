@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_margin="20sp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <com.example.user.goeat_3.RoundImageView
+            android:id="@+id/img_username"
+            android:layout_width="45sp"
+            android:layout_height="45sp"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            android:src="@drawable/menu_food"
+            app:type="circle"
+            tools:ignore="MissingPrefix" />
+        <TextView
+            android:id="@+id/txt_nick_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="nick_name"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10sp"/>
+
+        <ImageView
+            android:id="@+id/comstar"
+            android:layout_width="96sp"
+            android:layout_height="19sp"
+            android:src="@drawable/comfour"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10sp"/>
+
+        <TextView
+            android:id="@+id/txt_broadcastDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="2019/02/07"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10sp"/>
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/txt_comment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="評論評論評論評論評論評論評論評論"
+        android:layout_marginTop="10sp"
+        />
+
+    <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:orientation="horizontal"-->
+        <!--android:layout_marginTop="10sp">-->
+
+        <!--<ImageView-->
+            <!--android:id="@+id/unLike"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--app:srcCompat="@drawable/ic_favorite_border_black_24dp"-->
+            <!--android:visibility="visible" />-->
+
+        <!--<ImageView-->
+            <!--android:id="@+id/Like"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--app:srcCompat="@drawable/ic_favorite_black_24dp"-->
+            <!--android:visibility="gone" />-->
+
+        <!--<TextView-->
+            <!--android:id="@+id/like_num"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="3個讚"-->
+            <!--android:layout_gravity="center"-->
+            <!--android:layout_marginLeft="8sp"/>-->
+
+    <!--</LinearLayout>-->
+
+</LinearLayout>

@@ -4,37 +4,21 @@
     package="com.example.user.goeat_3"
     android:versionCode="316"
     android:versionName="3.1.6">
-    <permission
-        android:name="com.example.user.goeat_3.permission.JPUSH_MESSAGE"
-        android:protectionLevel="signature" />
-
-
-    <!-- Required 權限訪問 及一些要求設定-->
-    <uses-permission android:name="com.example.user.goeat_3.permission.JPUSH_MESSAGE" />
+    <!-- <permission -->
+    <!-- android:name="com.example.user.goeat_3.permission.JPUSH_MESSAGE" -->
+    <!-- android:protectionLevel="signature" /> &lt;!&ndash; Required 權限訪問 及一些要求設定 &ndash;&gt; -->
+    <!-- <uses-permission android:name="com.example.user.goeat_3.permission.JPUSH_MESSAGE" /> -->
     <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.WRITE_SETTINGS"
+    <uses-permission
+        android:name="android.permission.WRITE_SETTINGS"
         tools:ignore="ProtectedPermissions" />
-    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"
+    <uses-permission
+        android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"
         tools:ignore="ProtectedPermissions" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <uses-permission android:name="android.permission.WAKE_LOCK" />
-    <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT" />
-
-
-    <!-- Optional for location -->
-    <uses-permission android:name="android.permission.VIBRATE" />
-    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" /> <!-- 用于开启 debug 版本的应用在6.0 系统上 层叠窗口权限 -->
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
-    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.GET_TASKS" />
 
     <application
         android:allowBackup="true"
@@ -43,6 +27,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Design.Light.NoActionBar">
+        <activity android:name=".ForgotPasswordActivity"
+            android:theme="@style/AppTheme"></activity>
+        <activity
+            android:name=".c_store_1.EditMenuActivity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".c_store_1.EditStoreActivity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".c_store_1.CreateMenuActivity"
+            android:theme="@style/AppTheme" />
+        <activity android:name=".RecordForPersonalActivity" />
+        <activity
+            android:name=".e_record_1.Manager.Record4SponsorActivity"
+            android:theme="@style/AppTheme" />
+        <activity android:name=".d_order_1.OrderInfoActivity" />
         <activity
             android:name=".a_Initial.InitialActivity"
             android:screenOrientation="portrait">
@@ -55,70 +55,90 @@
         <activity
             android:name=".b_Main.MainActivity"
             android:label="@string/title_activity_main"
-            android:screenOrientation="portrait" />
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
         <activity
             android:name=".SearchActivity"
             android:parentActivityName=".b_Main.MainActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".c_store_1.CreateStoreActivity"></activity>
+        <activity
+            android:name=".c_store_1.CreateStoreActivity"
+            android:theme="@style/AppTheme" />
 
-        <service
-            android:name="cn.jpush.android.service.PushService"
-            android:process=":pushcore"
-            android:exported="false">
+        <service android:name=".MyFirebaseInstanceIDService">
             <intent-filter>
-                <action android:name="cn.jpush.android.intent.REGISTER" />
-                <action android:name="cn.jpush.android.intent.REPORT" />
-                <action android:name="cn.jpush.android.intent.PushService" />
-                <action android:name="cn.jpush.android.intent.PUSH_TIME" />
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
             </intent-filter>
         </service>
-
-        <!-- since 3.0.9 Required SDK 核心功能-->
-        <provider
-            android:authorities="com.example.user.goeat_3.DataProvider"
-            android:name="cn.jpush.android.service.DataProvider"
-            android:process=":pushcore"
-            android:exported="false"
-            />
-
-
-        <!-- since 3.1.0 Required SDK 核心功能-->
-        <provider
-            android:authorities="com.example.user.goeat_3.DownloadProvider"
-            android:name="cn.jpush.android.service.DownloadProvider"
-            android:exported="true"
-            />
-
-        <!-- Required SDK核心功能-->
-        <receiver
-            android:name="cn.jpush.android.service.PushReceiver"
-            android:enabled="true"
-            android:exported="false">
-            <intent-filter android:priority="1000">
-                <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED_PROXY" />   <!--Required  显示通知栏 -->
-                <category android:name="com.example.user.goeat_3" />
-            </intent-filter>
+        <service android:name=".MyFirebaseMessagingService">
             <intent-filter>
-                <action android:name="android.intent.action.USER_PRESENT" />
-                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
-            <!-- Optional -->
-            <intent-filter>
-                <action android:name="android.intent.action.PACKAGE_ADDED" />
-                <action android:name="android.intent.action.PACKAGE_REMOVED" />
-
-                <data android:scheme="package" />
-            </intent-filter>
-        </receiver>
-
-        <!-- Required SDK核心功能-->
-        <receiver android:name="cn.jpush.android.service.AlarmReceiver" android:exported="false"/>
-
-        <meta-data android:name="JPUSH_CHANNEL" android:value="developer-default"/>
-        <meta-data android:name="JPUSH_APPKEY" android:value="ecf38bb7c1370d246f151d08" />
-
-
+        </service> <!-- <service -->
+        <!-- android:name="cn.jpush.android.service.PushService" -->
+        <!-- android:exported="false" -->
+        <!-- android:process=":pushcore"> -->
+        <!-- <intent-filter> -->
+        <!-- <action android:name="cn.jpush.android.intent.REGISTER" /> -->
+        <!-- <action android:name="cn.jpush.android.intent.REPORT" /> -->
+        <!-- <action android:name="cn.jpush.android.intent.PushService" /> -->
+        <!-- <action android:name="cn.jpush.android.intent.PUSH_TIME" /> -->
+        <!-- </intent-filter> -->
+        <!-- </service> &lt;!&ndash; since 3.0.9 Required SDK 核心功能 &ndash;&gt; -->
+        <!-- <provider -->
+        <!-- android:name="cn.jpush.android.service.DataProvider" -->
+        <!-- android:authorities="com.example.user.goeat_3.DataProvider" -->
+        <!-- android:exported="false" -->
+        <!-- android:process=":pushcore" /> &lt;!&ndash; since 3.1.0 Required SDK 核心功能 &ndash;&gt; -->
+        <!-- <provider -->
+        <!-- android:name="cn.jpush.android.service.DownloadProvider" -->
+        <!-- android:authorities="com.example.user.goeat_3.DownloadProvider" -->
+        <!-- android:exported="true" /> &lt;!&ndash; Required SDK核心功能 &ndash;&gt; -->
+        <!-- <receiver -->
+        <!-- android:name="cn.jpush.android.service.PushReceiver" -->
+        <!-- android:enabled="true" -->
+        <!-- android:exported="false"> -->
+        <!-- <intent-filter android:priority="1000"> -->
+        <!-- <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED_PROXY" /> &lt;!&ndash; Required  显示通知栏 &ndash;&gt; -->
+        <!-- <category android:name="com.example.user.goeat_3" /> -->
+        <!-- </intent-filter> -->
+        <!-- <intent-filter> -->
+        <!-- <action android:name="android.intent.action.USER_PRESENT" /> -->
+        <!-- <action android:name="android.net.conn.CONNECTIVITY_CHANGE" /> -->
+        <!-- </intent-filter> -->
+        <!-- &lt;!&ndash; Optional &ndash;&gt; -->
+        <!-- <intent-filter> -->
+        <!-- <action android:name="android.intent.action.PACKAGE_ADDED" /> -->
+        <!-- <action android:name="android.intent.action.PACKAGE_REMOVED" /> -->
+        <!-- <data android:scheme="package" /> -->
+        <!-- </intent-filter> -->
+        <!-- </receiver> &lt;!&ndash; Required SDK核心功能 &ndash;&gt; -->
+        <!-- <receiver -->
+        <!-- android:name="cn.jpush.android.service.AlarmReceiver" -->
+        <!-- android:exported="false" /> -->
+        <!-- <meta-data -->
+        <!-- android:name="JPUSH_CHANNEL" -->
+        <!-- android:value="developer-default" /> -->
+        <!-- <meta-data -->
+        <!-- android:name="JPUSH_APPKEY" -->
+        <!-- android:value="ecf38bb7c1370d246f151d08" /> -->
+        <activity
+            android:name=".c_store_1.StoreInfoActivity"
+            android:theme="@style/AppTheme" />
+        <activity android:name=".e_record_1.Manager.RecordForInitActivity" />
+        <activity android:name=".e_record_1.Manager.RecordForOrderActivity" />
+        <activity android:name=".e_record_1.Order.RecordAllActivity" />
+        <activity
+            android:name=".SignInUpActivity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".e_record_1.For_RecordFragment2.Manager.Record4SponsorActivity2"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".e_record_1.For_RecordFragment2.Order.RecordAllActivity2"
+            android:theme="@style/AppTheme" />
+        <activity android:name=".d_order_1.OrderInfoActivity" />
     </application>
 
 </manifest>

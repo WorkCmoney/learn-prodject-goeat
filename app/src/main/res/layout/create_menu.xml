@@ -2,36 +2,70 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true">
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar_createStore"
+    <android.support.design.widget.CoordinatorLayout
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:elevation="4sp"
-        app:logo="@drawable/ic_logo"
-        android:theme="@style/AppTheme.ToolBarStyle"
-        android:fitsSystemWindows="true">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="@string/toolbar_addStore"
-            android:textColor="@color/white"
-            style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"/>
-
-    </android.support.v7.widget.Toolbar>
+        android:layout_height="match_parent"
+        android:layout_above="@+id/line1">
 
         <android.support.v7.widget.RecyclerView
-            android:id="@+id/rv_history"
+            android:id="@+id/rv_add_menu"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:background="@color/main_bg"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         </android.support.v7.widget.RecyclerView>
 
+        <android.support.design.widget.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar_createMenu"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:elevation="4sp"
+                app:logo="@drawable/ic_logo"
+                android:theme="@style/AppTheme.ToolBarStyle"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/toolbar_addStore"
+                    android:textColor="@color/white"
+                    style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"/>
+
+            </android.support.v7.widget.Toolbar>
+
+            <android.support.v4.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                android:background="@color/main_bg"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:text="第二步、新增菜色"
+                    android:textColor="@color/colorAccent"
+                    android:gravity="center"
+                    android:padding="10sp"
+                    android:background="@color/bg_search" />
+            </android.support.v4.widget.NestedScrollView>
+
+        </android.support.design.widget.AppBarLayout>
+
+    </android.support.design.widget.CoordinatorLayout>
 
     <LinearLayout
         android:id="@+id/line1"
@@ -43,23 +77,27 @@
         android:paddingVertical="10sp">
 
         <TextView
-            android:id="@+id/btn_return"
+            android:id="@+id/btn_menu_return"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
             android:text="返回"
-            android:background="?android:attr/selectableItemBackground"/>
+            android:background="?android:attr/selectableItemBackground"
+            android:textSize="16sp"/>
 
         <TextView
-            android:id="@+id/btn_next"
+            android:id="@+id/btn_menu_finish"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="下一步"
-            android:background="?android:attr/selectableItemBackground"/>
+            android:text="完成"
+            android:background="?android:attr/selectableItemBackground"
+            android:textSize="16sp"/>
 
     </LinearLayout>
+
+
 
 </RelativeLayout>
